@@ -1,0 +1,12 @@
+# Core dependencies
+mediapipe==1.2.0
+opencv-python==5.0.0.93
+numpy==2.5.4
+scipy==1.18.1
+pydantic==2.14.1
+
+# Development and testing
+pytest==9.2.0
+ruff==0.17.3
+matplotlib==3.11.2
+

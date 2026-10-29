@@ -1,0 +1,47 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "auri-cv"
+version = "0.1.0"
+description = "AURI Computer Vision & Biomedical Engine for Upper-Limb Rehabilitation Analysis"
+readme = "README.md"
+requires-python = ">=3.12"
+license = { text = "Proprietary / Clinical Research" }
+authors = [
+    { name = "AURI Development Team" }
+]
+dependencies = [
+    "mediapipe>=1.2.0",
+    "opencv-python>=4.10.0",
+    "numpy>=2.0.0",
+    "scipy>=1.14.0",
+    "pydantic>=2.10.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+    "ruff>=0.9.0",
+    "matplotlib>=3.10.0",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "N", "B", "UP", "C4", "SIM"]
+ignore = ["E501", "N803", "N806"]
+
+[tool.pytest.ini_options]
+minversion = "8.0"
+testpaths = ["tests"]
+pythonpath = ["src"]
+python_files = ["test_*.py"]
+addopts = "-v --strict-markers"
+
